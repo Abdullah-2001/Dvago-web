@@ -4,7 +4,7 @@ import Navbar from "../components/layout/Navbar";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800">
+    <div>
       <Navbar />
       <BannerSlider />
       <ProductSection />

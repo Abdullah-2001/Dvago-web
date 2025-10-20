@@ -98,7 +98,7 @@ const Navbar = () => {
             </div>
 
             {/* CATEGORIES */}
-            <nav className="flex items-center justify-center bg-[#f5f5f5] shadow border-t border-gray-200">
+            <nav className="flex items-center justify-center bg-[#F0F0F0] shadow border-t border-gray-200">
                 <CategoryDropdown />
                 <Categories mainCategories={mainCategories} />
             </nav>

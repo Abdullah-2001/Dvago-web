@@ -20,26 +20,6 @@
     src: url(../src/assets/fonts/Poppins/Poppins-Bold.ttf);
 }
 
-/* .no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fadeIn {
-    animation: fadeIn 0.2s ease-in-out;
-} */
-
 .font-regular {
     font-family: 'poppins-regular';
 }
@@ -97,16 +77,38 @@
 
 /* Product slider custom arrow css */
 
-.custom-arrow::before {
-  display: none;
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-arrow svg {
   color: #374151;
+  width: 34px;
+  height: 34px;
+  transition: transform 0.3s ease;
 }
 
-/* Hide arrows on mobile */
-@media (max-width: 768px) {
+.custom-arrow:hover svg {
+  transform: scale(1.15);
+}
+
+/* Base arrow positions (desktop default) */
+.next-arrow {
+  right: -80px;
+}
+
+.prev-arrow {
+  left: -80px;
+}
+
+@media (max-width: 1440px) {
   .custom-arrow {
     display: none !important;
   }
