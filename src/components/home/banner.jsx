@@ -1,10 +1,10 @@
 import Slider from "react-slick";
-import banner from "../../assets/images/banner.png"; // your uploaded image
-
+import banner from "../../assets/images/banner.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const BannerSlider = () => {
+    
     const settings = {
         dots: true,
         infinite: true,

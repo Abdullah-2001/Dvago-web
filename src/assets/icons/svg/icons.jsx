@@ -144,6 +144,51 @@ const SvgIcon = ({
       <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22.8014 1.06271C20.8049 -0.352333 18.0115 0.0787049 16.5602 2.02783L12.7448 7.15564L8.92933 2.02783C7.47809 0.0787049 4.68115 -0.35405 2.68635 1.06271C0.689794 2.47776 0.246506 5.20652 1.69775 7.15564L11.2759 20.0284C12.0288 21.0382 13.4607 21.0382 14.2136 20.0284L23.7918 7.15564C25.243 5.20652 24.8015 2.47776 22.8032 1.06271M21.0371 5.37138L12.7448 16.5149L4.45247 5.37138C4.06019 4.84418 4.17981 4.10574 4.71985 3.72279C5.25989 3.33983 6.01629 3.45661 6.40857 3.98382L12.7448 12.4964L19.0792 3.98382C19.4715 3.45661 20.2279 3.33811 20.7679 3.72279C21.308 4.10574 21.4276 4.84418 21.0353 5.37138" fill="#BB5A77" />
       </svg>
+    ),
+    hamburger: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        role="img"
+      >
+        <rect x="3" y="5" width="18" height="2" rx="1" fill="currentColor" />
+        <rect x="3" y="11" width="18" height="2" rx="1" fill="currentColor" />
+        <rect x="3" y="17" width="18" height="2" rx="1" fill="currentColor" />
+      </svg>
+    ),
+    hamburgerClose: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        role="img"
+      >
+        <rect
+          x="5"
+          y="11"
+          width="14"
+          height="2"
+          rx="1"
+          transform="rotate(45 12 12)"
+          fill="currentColor"
+        />
+        <rect
+          x="5"
+          y="11"
+          width="14"
+          height="2"
+          rx="1"
+          transform="rotate(-45 12 12)"
+          fill="currentColor"
+        />
+      </svg>
     )
   };
   return icons[name] || null;
