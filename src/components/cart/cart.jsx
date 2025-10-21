@@ -51,7 +51,7 @@ const Cart = ({ items, toggleSidebar }) => {
                     <div className="text-center text-gray-600 py-8">
                         <p style={{ fontSize: size.paragraph }}>Your cart is empty</p>
                     </div>
-                ) : items.map((item) => <CartItems item={item} handleRemoveItem={handleRemoveItem} handleIncQty={handleIncQty} handleDecQty={handleDecQty} />)}
+                ) : items.map((item) => <CartItems key={item.id} item={item} handleRemoveItem={handleRemoveItem} handleIncQty={handleIncQty} handleDecQty={handleDecQty} />)}
             </div>
 
             {/* Footer / Summary */}
