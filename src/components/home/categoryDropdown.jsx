@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CategoryDropdown = () => {
 
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
 
   const categories = [
     {
@@ -44,12 +46,13 @@ const CategoryDropdown = () => {
         >
           {categories.map((cat, index) => (
             <div key={index} className="group">
-              <div className="px-4 py-2 font-medium text-gray-700 hover:bg-gray-50">
+              <div onClick={() => navigate(`/categories/${cat.name}`)} className="px-4 py-2 font-medium text-gray-700 hover:bg-gray-50">
                 {cat.name}
               </div>
               <div className="hidden group-hover:block absolute left-full top-28 ml-1 w-48 bg-white shadow-lg border rounded-lg transition-all duration-300 ease-in-out">
                 {cat.subcategories.map((sub, i) => (
                   <div
+                    onClick={() => navigate(`/categories/${cat.name}/${sub}`)}
                     key={i}
                     className="px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-green-600 cursor-pointer"
                   >

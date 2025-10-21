@@ -3,9 +3,9 @@ import SvgIcon from "../../assets/icons/svg/icons";
 import { colors } from "../../utils/colors";
 import { size } from '../../utils/responsiveFonts'
 
-const Product = ({ product }) => {
+const Product = ({ product, handleAddToCart}) => {
     return (
-        <div className="mx-2 cursor-pointer">
+        <div className="mx-2">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow duration-200">
                 <div className="relative border-[1px] border-gray-100 rounded-2xl">
                     <div className="absolute top-2 left-2 bg-[#FFDA0A] rounded-full w-10 h-10 p-7 flex justify-center items-center">
@@ -22,10 +22,10 @@ const Product = ({ product }) => {
                         className="justify-center absolute -bottom-3 left-3"
                         leftIcon={<SvgIcon name='star' size={20} color={colors.white} />}
                     />
-                    <div className="absolute -bottom-4.5 right-2 border-1 bg-white border-gray-300 rounded-full w-10 h-10 flex justify-center items-center">
+                    <div onClick={() => handleAddToCart(product)} className="cursor-pointer absolute -bottom-4.5 right-2 border-1 bg-white border-gray-300 rounded-full w-10 h-10 flex justify-center items-center">
                         <SvgIcon name='cart' size={20} color={colors.cherry} />
                     </div>
-                    <div className="absolute -bottom-4.5 right-15 border-1 bg-white border-gray-300 rounded-full w-10 h-10 flex justify-center items-center">
+                    <div className="cursor-pointer absolute -bottom-4.5 right-15 border-1 bg-white border-gray-300 rounded-full w-10 h-10 flex justify-center items-center">
                         <SvgIcon name='dvago' size={20} color={colors.cherry} />
                     </div>
                 </div>
@@ -39,10 +39,10 @@ const Product = ({ product }) => {
                 </div>
                 <div className="product-price flex gap-2">
                     <p className="font-semiBold" style={{ color: colors.darkGrey2, fontSize: size.paragraph, color: colors.primary }}>
-                        {product.discountedPrice}
+                        ${product.discountedPrice}
                     </p>
                     <del className={`font-medium`} style={{ color: colors.lightGrey }}>
-                        {product.discountedPrice}
+                        ${product.discountedPrice}
                     </del>
                 </div>
             </div>

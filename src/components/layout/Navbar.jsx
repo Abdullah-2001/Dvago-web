@@ -7,8 +7,15 @@ import SvgIcon from "../../assets/icons/svg/icons";
 import Input from "../ui/input";
 import Categories from "../home/categories";
 import { mainCategories } from "../../mock/mockData";
+import useNavigator from "../../hooks/useNavigator";
+import Badge from "../ui/badge";
+import { useSelector } from "react-redux";
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
+
+    const { goHome } = useNavigator()
+    const cartItems = useSelector((state) => state.cart)
+
     return (
         <header className="w-full">
             {/* Main Header */}
@@ -17,9 +24,10 @@ const Navbar = () => {
                 <div className="md:absolute md:left-0 md:top-0 flex h-12 md:h-full w-auto md:w-64 bg-white rounded-r-full items-center justify-center md:justify-end md:pr-10 z-10">
                     <img
                         style={{ width: "120px", height: "auto" }}
-                        className="md:w-150px"
+                        className="md:w-150px cursor-pointer"
                         src={logo}
                         alt="logo"
+                        onClick={goHome}
                     />
                 </div>
                 {/* Mobile Menu Button */}
@@ -55,18 +63,30 @@ const Navbar = () => {
                         className={`font-semiBold py-[15px] px-[15px] h-10 rounded-full text-[14px]`}
                         variant="secondary"
                         bg={colors.secondary}
-                        text="Instant Order"
-                    />
-                    <div className="flex items-center gap-3">
-                        <SvgIcon name='user' size={24} color={colors.white} strokeWidth={2} />
+                    >Instant Order</Button>
+                    <div className="flex items-center gap-3 relative">
+                        <SvgIcon className="cursor-pointer" name='user' size={24} color={colors.white} strokeWidth={2} />
                         <img src={heartIcon} alt="wishlist" className="w-5 h-5 cursor-pointer" color={colors.white} strokeWidth={2} />
-                        <SvgIcon name='cart' size={24} color={colors.white} strokeWidth={2} />
+                        <SvgIcon
+                            className="cursor-pointer"
+                            name='cart'
+                            size={24}
+                            color={colors.white}
+                            strokeWidth={2}
+                            onClick={toggleSidebar}
+                        />
+                        <Badge
+                            text={cartItems?.length || 0}
+                            variant="secondary"
+                            size="sm"
+                            className="absolute -top-3 -right-3 rounded-full w-6 h-6"
+                        />
                     </div>
                 </div>
                 {/* Mobile Right Icons */}
                 <div className="flex md:hidden items-center gap-4">
-                    <SvgIcon name='search' size={20} color={colors.white} />
-                    <SvgIcon name='cart' size={20} color={colors.white} />
+                    <SvgIcon name='search' className="cursor-pointer" size={20} color={colors.white} />
+                    <SvgIcon name='cart' className="cursor-pointer" onClick={toggleSidebar} size={20} color={colors.white} />
                 </div>
             </div>
             {/* Mobile Search Bar */}

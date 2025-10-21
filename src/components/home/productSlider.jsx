@@ -4,9 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "../ui/button";
 import { colors } from "../../utils/colors";
+import { addToCart } from "../../store/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { useSnackbar } from "notistack";
 
 const ProductSlider = ({ products }) => {
-  // Custom arrow components
+
+  const dispatch = useDispatch()
+  const { enqueueSnackbar } = useSnackbar()
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -66,21 +72,29 @@ const ProductSlider = ({ products }) => {
     ],
   };
 
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item))
+    enqueueSnackbar('Added to cart',
+      {
+        variant: "success",
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'right'
+        }
+      })
+  }
+
   return (
     <div className="product-slider-container max-w-7xl mx-auto px-4 py-8 relative">
       <Slider {...settings}>
-        {products.map((product, index) => (
-          <Product key={index} product={product} />
-        ))}
+        {products.map((product, index) => <Product key={index} product={product} handleAddToCart={handleAddToCart} />)}
       </Slider>
-
       <div className="text-center mt-8">
         <Button
           className="font-semiBold py-[15px] px-[15px] h-10 rounded-full text-[14px]"
           variant="secondary"
           bg={colors.secondary}
-          text="View All Products"
-        />
+        >View All Products</Button>
       </div>
     </div>
   );

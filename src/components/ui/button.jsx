@@ -11,13 +11,13 @@ const Button = ({
   marginTop,
   bg,
   disabled = false,
+  children,
   ...props
 }) => {
 
   // Base styling
   const baseClasses = `
     inline-flex items-center justify-center 
-    rounded-full 
     transition-all duration-300 
     focus:outline-none focus:ring-2 focus:ring-offset-2 
     disabled:opacity-60 disabled:cursor-not-allowed
@@ -42,13 +42,9 @@ const Button = ({
       className={`${baseClasses} ${variants[variant] || ""} ${bgClass} ${className} ${width || ""} ${height || ""} ${marginTop || ""}`}
       {...props}
     >
-      {icon && iconPosition === "left" && (
-        <Icon name={icon} className="mr-2 w-5 h-5" />
-      )}
-      <p>{text}</p>
-      {icon && iconPosition === "right" && (
-        <Icon name={icon} className="ml-2 w-5 h-5" />
-      )}
+      {icon && iconPosition === "left" && <Icon name={icon} className="mr-2 w-5 h-5" />}
+      {children}
+      {icon && iconPosition === "right" && <Icon name={icon} className="ml-2 w-5 h-5" />}
     </button>
   );
 };
