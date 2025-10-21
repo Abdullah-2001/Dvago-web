@@ -16,6 +16,29 @@ const Navbar = ({ toggleSidebar }) => {
     const { goHome } = useNavigator()
     const cartItems = useSelector((state) => state.cart)
 
+    function IconGroup() {
+        return (
+            <>
+                <SvgIcon className="cursor-pointer" name='user' size={24} color={colors.white} strokeWidth={2} />
+                <img src={heartIcon} alt="wishlist" className="w-5 h-5 cursor-pointer" color={colors.white} strokeWidth={2} />
+                <SvgIcon
+                    className="cursor-pointer"
+                    name='cart'
+                    size={24}
+                    color={colors.white}
+                    strokeWidth={2}
+                    onClick={toggleSidebar}
+                />
+                <Badge
+                    text={cartItems?.length || 0}
+                    variant="secondary"
+                    size="sm"
+                    className="absolute -top-3 -right-3 rounded-full w-6 h-6"
+                />
+            </>
+        )
+    }
+
     return (
         <header className="w-full">
             {/* Main Header */}
@@ -29,12 +52,6 @@ const Navbar = ({ toggleSidebar }) => {
                         alt="logo"
                         onClick={goHome}
                     />
-                </div>
-                {/* Mobile Menu Button */}
-                <div className="md:hidden flex items-center">
-                    <Button className="text-white p-2">
-                        <SvgIcon name='menu' size={24} color={colors.white} />
-                    </Button>
                 </div>
                 {/* Search & Location Section */}
                 <div className="hidden md:flex flex-col md:flex-row items-center gap-4 md:ml-64 flex-1 justify-center max-w-2xl">
@@ -65,28 +82,12 @@ const Navbar = ({ toggleSidebar }) => {
                         bg={colors.secondary}
                     >Instant Order</Button>
                     <div className="flex items-center gap-3 relative">
-                        <SvgIcon className="cursor-pointer" name='user' size={24} color={colors.white} strokeWidth={2} />
-                        <img src={heartIcon} alt="wishlist" className="w-5 h-5 cursor-pointer" color={colors.white} strokeWidth={2} />
-                        <SvgIcon
-                            className="cursor-pointer"
-                            name='cart'
-                            size={24}
-                            color={colors.white}
-                            strokeWidth={2}
-                            onClick={toggleSidebar}
-                        />
-                        <Badge
-                            text={cartItems?.length || 0}
-                            variant="secondary"
-                            size="sm"
-                            className="absolute -top-3 -right-3 rounded-full w-6 h-6"
-                        />
+                        <IconGroup />
                     </div>
                 </div>
                 {/* Mobile Right Icons */}
-                <div className="flex md:hidden items-center gap-4">
-                    <SvgIcon name='search' className="cursor-pointer" size={20} color={colors.white} />
-                    <SvgIcon name='cart' className="cursor-pointer" onClick={toggleSidebar} size={20} color={colors.white} />
+                <div className="flex md:hidden items-center gap-4 relative">
+                    <IconGroup />
                 </div>
             </div>
             {/* Mobile Search Bar */}
