@@ -4,15 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "../ui/button";
 import { colors } from "../../utils/colors";
-import { addToCart } from "../../store/cart/cartSlice";
-import { useDispatch } from "react-redux";
-import { useSnackbar } from "notistack";
-import { size } from "../../utils/responsiveFonts";
+import Actions from "../../hooks/useActions";
 
 const ProductSlider = ({ products }) => {
 
-  const dispatch = useDispatch()
-  const { enqueueSnackbar } = useSnackbar()
 
   const NextArrow = (props) => {
     const { onClick } = props;
@@ -73,22 +68,10 @@ const ProductSlider = ({ products }) => {
     ],
   };
 
-  const handleAddToCart = (item) => {
-    dispatch(addToCart(item))
-    enqueueSnackbar('Added to cart',
-      {
-        variant: "success",
-        anchorOrigin: {
-          vertical: 'bottom',
-          horizontal: 'right'
-        }
-      })
-  }
-
   return (
     <div className="product-slider-container max-w-7xl mx-auto px-4 py-8 relative">
       <Slider {...settings}>
-        {products.map((product, index) => <Product key={index} product={product} handleAddToCart={handleAddToCart} />)}
+        {products.map((product, index) => <Product key={index} product={product} />)}
       </Slider>
       <div className="text-center mt-8">
         <Button

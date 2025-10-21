@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Breadcrumbs = ({ items = [] }) => {
     if (!items.length) return null;
     return (
@@ -8,8 +10,8 @@ const Breadcrumbs = ({ items = [] }) => {
                     return (
                         <li key={index} className="inline-flex items-center">
                             {index === 0 ? (
-                                <a
-                                    href={item.href || "#"}
+                                <Link
+                                    to={item.href || "#"}
                                     className="inline-flex items-center text-md font-medium text-gray-700 dark:text-gray-400"
                                 >
                                     <svg
@@ -22,7 +24,7 @@ const Breadcrumbs = ({ items = [] }) => {
                                         <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                                     </svg>
                                     {item.label}
-                                </a>
+                                </Link>
                             ) : (
                                 <div className="flex items-center">
                                     <svg
@@ -45,12 +47,12 @@ const Breadcrumbs = ({ items = [] }) => {
                                             {item.label}
                                         </span>
                                     ) : (
-                                        <a
-                                            href={item.href || "#"}
+                                        <Link
+                                            to={item.href || "#"}
                                             className="ms-1 text-md font-medium text-gray-700 md:ms-2 dark:text-gray-400"
                                         >
                                             {item.label}
-                                        </a>
+                                        </Link>
                                     )}
                                 </div>
                             )}
