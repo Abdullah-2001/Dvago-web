@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../ui/button";
 
 const CategoryDropdown = () => {
 
@@ -28,7 +29,7 @@ const CategoryDropdown = () => {
       onMouseLeave={() => setIsOpen(false)}
     >
 
-      <button className="cursor-pointer font-medium flex items-center gap-1 px-3 py-2 bg-gray-100 hover:bg-gray-200 transition rounded-md text-sm md:text-base">
+      <Button variant="" className="cursor-pointer font-medium flex items-center gap-1 px-3 py-2 bg-gray-100 hover:bg-gray-200 transition rounded-md text-sm md:text-base">
         Shop By Category
         <svg
           className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -38,7 +39,7 @@ const CategoryDropdown = () => {
         >
           <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
-      </button>
+      </Button>
 
       {isOpen && (
         <div

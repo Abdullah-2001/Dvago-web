@@ -1,5 +1,6 @@
 import SvgIcon from "../../assets/icons/svg/icons";
 import { colors } from "../../utils/colors";
+import { size } from "../../utils/responsiveFonts";
 import Button from "../ui/button";
 
 const CartItems = ({ handleRemoveItem, handleIncQty, handleDecQty, item }) => {
@@ -17,14 +18,14 @@ const CartItems = ({ handleRemoveItem, handleIncQty, handleDecQty, item }) => {
             <div className="flex-1 min-w-0">
                 <div className="flex justify-between items-start">
                     <div>
-                        <h4 className="font-medium text-sm truncate">
+                        <h4 className="font-medium truncate" style={{ fontSize: size.paragraphSmall }}>
                             {item.name}
                         </h4>
-                        <p className="text-xs text-gray-500 mt-1">{item.description}</p>
+                        <p className="mt-1" style={{ color: colors.grey, fontSize: size.paragraphSmall }}>{item.description}</p>
                     </div>
                     <div className="text-right">
                         <div className="text-sm font-semibold">
-                            {item.originalPrice}
+                            ${item.discountedPrice}
                         </div>
                         <div className="mt-2 cursor-pointer" onClick={() => handleRemoveItem(item)}>
                             <SvgIcon name="cross" className="w-4 h-4 text-gray-700 cursor-pointer" />
@@ -34,7 +35,7 @@ const CartItems = ({ handleRemoveItem, handleIncQty, handleDecQty, item }) => {
 
                 {/* Qty control */}
                 <div className="mt-3 flex items-center gap-3">
-                    <div className="flex items-center border rounded-md overflow-hidden" style={{ borderColor: colors.lightGrey3 }}>
+                    <div className="flex items-center rounded-md overflow-hidden" style={{ borderColor: colors.lightGrey3 }}>
                         <Button
                             onClick={() => handleDecQty(item)}
                             variant="secondary"

@@ -8,6 +8,7 @@ export const colors = {
     lightGrey2: "#F0F0F0",
     lightGrey3: "#E6E6E6",
     white: "#FFFFFF",
-    cherry:"#BB5A77"
+    cherry:"#BB5A77",
+    grey: 'grey'
 
 }

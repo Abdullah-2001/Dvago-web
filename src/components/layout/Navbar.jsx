@@ -32,9 +32,9 @@ const Navbar = ({ toggleSidebar }) => {
                 </div>
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center">
-                    <button className="text-white p-2">
+                    <Button className="text-white p-2">
                         <SvgIcon name='menu' size={24} color={colors.white} />
-                    </button>
+                    </Button>
                 </div>
                 {/* Search & Location Section */}
                 <div className="hidden md:flex flex-col md:flex-row items-center gap-4 md:ml-64 flex-1 justify-center max-w-2xl">

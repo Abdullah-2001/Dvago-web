@@ -7,6 +7,7 @@ import { colors } from "../../utils/colors";
 import { addToCart } from "../../store/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import { useSnackbar } from "notistack";
+import { size } from "../../utils/responsiveFonts";
 
 const ProductSlider = ({ products }) => {
 

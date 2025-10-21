@@ -30,10 +30,10 @@ const Product = ({ product, handleAddToCart}) => {
                     </div>
                 </div>
                 <div className="product-header mb-4 mt-8">
-                    <h3 style={{ fontSize: size.paragraph }} className='font-semiBold text-gray-800'>
+                    <h3 style={{ fontSize: size.paragraph, color: colors.darkGrey }} className='font-semiBold text-gray-800'>
                         {product.name}
                     </h3>
-                    <p style={{ fontSize: size.paragraph }} className='font-semiBold text-gray-800'>
+                    <p style={{ fontSize: size.paragraph, color: colors.darkGrey }} className='font-semiBold text-gray-800'>
                         {product.description}
                     </p>
                 </div>
@@ -41,8 +41,8 @@ const Product = ({ product, handleAddToCart}) => {
                     <p className="font-semiBold" style={{ color: colors.darkGrey2, fontSize: size.paragraph, color: colors.primary }}>
                         ${product.discountedPrice}
                     </p>
-                    <del className={`font-medium`} style={{ color: colors.lightGrey }}>
-                        ${product.discountedPrice}
+                    <del className={`font-medium`} style={{ color: colors.lightGrey, fontSize: size.paragraph }}>
+                        ${product.originalPrice}
                     </del>
                 </div>
             </div>

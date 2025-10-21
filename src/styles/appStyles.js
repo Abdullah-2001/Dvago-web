@@ -1,4 +1,5 @@
 const appStyles = {
+  
   // Layout
   body: "bg-white",
   container: "w-full bg-white",
@@ -23,23 +24,29 @@ const appStyles = {
   screenWidthHeight: "w-screen h-full",
 
   // Typography
+  // Headings
   headerTitle: "text-[13px] font-semibold text-black",
-  heading: "text-[24px] font-extrabold text-black",
-  h5: "text-[18px] font-medium text-green-600",
-  h5Bold: "text-[18px] font-bold text-black",
-  h4: "text-[16px] font-bold text-black",
-  h4Primary: "text-[16px] text-green-600 font-medium",
-  h3primary: "text-[14px] text-green-600 font-semibold",
-  h3: "text-[14px] text-black font-normal",
-  h2Regular: "text-[13px] text-black font-normal",
-  h2Primary: "text-[13px] text-green-600 font-semibold",
-  h1: "text-[12px] text-black font-medium",
-  label: "text-[12px] text-black mb-[5px]",
-  textCenter: "text-center",
+  heading: "text-[24px] md:text-[28px] font-extrabold text-black",
 
-  // Borders
-  border: "border border-gray-300",
-  borderBottom: "border-b border-gray-300",
+  h5: "text-[18px] md:text-[20px] font-medium text-green-600",
+  h5Bold: "text-[18px] md:text-[20px] font-bold text-black",
+
+  h4: "text-[16px] md:text-[18px] font-bold text-black",
+  h4Primary: "text-[16px] md:text-[18px] text-green-600 font-medium",
+
+  h3primary: "text-[14px] md:text-[16px] text-green-600 font-semibold",
+  h3: "text-[14px] md:text-[16px] text-black font-normal",
+
+  h2Regular: "text-[13px] md:text-[15px] text-black font-normal",
+  h2Primary: "text-[13px] md:text-[15px] text-green-600 font-semibold",
+
+  h1: "text-[12px] md:text-[14px] text-black font-medium",
+
+  // Paragraphs (responsive standard text sizes)
+  p1: "text-[14px] font-medium md:text-[16px] text-gray-700 leading-relaxed cursor-pointer",
+  p2: "text-[16px] md:text-[18px] text-gray-800 leading-relaxed",
+  p3: "text-[12px] md:text-[14px] text-gray-600 leading-snug",
+  pMuted: "text-[13px] md:text-[15px] text-gray-500 italic",
 
   // Inputs
   inputField:
@@ -49,12 +56,6 @@ const appStyles = {
   imageThumbnail: "w-20 h-[70px] rounded-lg mb-2 object-cover",
   imageGrid: "flex flex-wrap gap-3 mt-5",
 
-  // Empty state
-  emptyContainer: "flex justify-center items-center p-5",
-  emptyText: "text-[14px] text-gray-500",
-
-  // Errors
-  fieldError: "text-red-500 mt-2 text-[12px]",
 };
 
 export default appStyles;
