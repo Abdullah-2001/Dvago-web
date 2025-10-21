@@ -43,14 +43,14 @@ const CategoryDropdown = () => {
 
       {isOpen && (
         <div
-          className="cursor-pointer absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-gray-100 transition-all duration-300 ease-in-out animate-fadeIn z-20"
+          className="cursor-pointer absolute left-0 w-56 bg-white shadow-lg rounded-lg border border-gray-100 transition-all duration-300 ease-in-out animate-fadeIn z-20"
         >
           {categories.map((cat, index) => (
             <div key={index} className="group">
               <div onClick={() => navigate(`/categories/${cat.name}`)} className="px-4 py-2 font-medium text-gray-700 hover:bg-gray-50">
                 {cat.name}
               </div>
-              <div className="hidden group-hover:block absolute left-full top-28 ml-1 w-48 bg-white shadow-lg border rounded-lg transition-all duration-300 ease-in-out">
+              <div className="hidden group-hover:block absolute left-full top-0 w-48 bg-white shadow-lg rounded-lg transition-all duration-300 ease-in-out">
                 {cat.subcategories.map((sub, i) => (
                   <div
                     onClick={() => navigate(`/categories/${cat.name}/${sub}`)}
