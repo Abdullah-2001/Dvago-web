@@ -18,10 +18,10 @@ const Product = ({ productType = "", product }) => {
                         />
                     </div>
                     <div className="flex-1">
-                        <h3 className="text-sm font-medium text-gray-800 truncate w-20">
+                        <h3 style={{ fontSize: size.paragraphMedium, color: colors.darkGrey }} className="font-semiBold truncate w-20">
                             {product.name}
                         </h3>
-                        <p className="text-xs text-gray-500 truncate w-20">
+                        <p  style={{ fontSize: size.paragraphSmall, color: colors.darkGrey }}className="font-semiBold truncate w-20">
                             {product.description}
                         </p>
                     </div>
@@ -35,7 +35,8 @@ const Product = ({ productType = "", product }) => {
                                 <p className='font-bold' style={{ fontSize: size.paragraph }}>OFF</p>
                             </div>
                         </div>
-                        <img className="rounded-2xl" src={product.image} alt="" />
+                        <img 
+                            style={{width: "100%", height:"100%"}} src={product.image} alt="" />
                         <Badge
                             text="4.5"
                             variant="rating"
@@ -51,10 +52,10 @@ const Product = ({ productType = "", product }) => {
                         </div>
                     </div>
                     <div className="product-header mb-4 mt-8">
-                        <h3 style={{ fontSize: size.paragraph, color: colors.darkGrey }} className='font-semiBold text-gray-800'>
+                        <h3 style={{ fontSize: size.paragraphMedium, color: colors.darkGrey }} className='font-semiBold'>
                             {product.name}
                         </h3>
-                        <p style={{ fontSize: size.paragraph, color: colors.darkGrey }} className='font-semiBold text-gray-800'>
+                        <p style={{ fontSize: size.paragraphSmall, color: colors.darkGrey }} className='font-semiBold'>
                             {product.description}
                         </p>
                     </div>

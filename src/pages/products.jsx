@@ -67,7 +67,7 @@ const Products = () => {
             ))}
           </div>
           {selectedSubCategory?.children?.length ? (
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2 rounded-lg border border-gray-100">
+            <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2 rounded-lg border border-gray-100">
               {selectedSubCategory.children.map((product) => <Product key={product.id} product={product} />)}
             </div>
           ) : (

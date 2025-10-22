@@ -24,7 +24,7 @@ const Categories = ({ mainCategories }) => {
                     <p
                         key={index}
                         className="font-medium cursor-pointer px-3 py-2 sm:px-6 sm:py-4 whitespace-nowrap hover:text-green-600 duration-200 w-full sm:w-auto text-center sm:text-left"
-                        style={{ fontSize: size.paragraph, color: colors.darkGrey2 }}
+                        style={{ fontSize: size.paragraphMedium, color: colors.darkGrey2 }}
                     >
                         {category}
                     </p>

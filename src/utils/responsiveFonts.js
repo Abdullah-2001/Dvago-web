@@ -6,6 +6,7 @@ export const size = {
   h5: "clamp(0.875rem, 1.5vw, 1.25rem)", // ~14px to 20px
   paragraph: "clamp(0.875rem, 1vw + 0.25rem, 1.125rem)", // ~14–18px
   paragraphSmall: "clamp(0.75rem, 0.8vw, 0.875rem)", // ~12–14px
+  paragraphMedium: "clamp(0.875rem, 1vw, 1rem)", // ~14–16px
   label: "clamp(0.75rem, 0.9vw, 0.875rem)", // ~12–14px
   button: "clamp(0.875rem, 1vw, 1rem)", // ~14–16px
   caption: "clamp(0.65rem, 0.8vw, 0.75rem)", // ~10–12px

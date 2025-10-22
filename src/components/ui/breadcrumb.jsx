@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { size } from "../../utils/responsiveFonts";
 
 const Breadcrumbs = ({ items = [] }) => {
     if (!items.length) return null;
@@ -12,7 +13,8 @@ const Breadcrumbs = ({ items = [] }) => {
                             {index === 0 ? (
                                 <Link
                                     to={item.href || "#"}
-                                    className="inline-flex items-center text-md font-medium text-gray-700 dark:text-gray-400"
+                                    className="inline-flex items-center font-medium"
+                                    style={{ fontSize: size.paragraphMedium }}
                                 >
                                     <svg
                                         className="w-3 h-3 me-2.5"
@@ -43,13 +45,17 @@ const Breadcrumbs = ({ items = [] }) => {
                                         />
                                     </svg>
                                     {isLast ? (
-                                        <span className="ms-1 text-md font-medium text-gray-500 md:ms-2 dark:text-gray-400">
+                                        <span
+                                            className="ms-1 font-medium md:ms-2"
+                                            style={{ fontSize: size.paragraphMedium }}
+                                        >
                                             {item.label}
                                         </span>
                                     ) : (
                                         <Link
                                             to={item.href || "#"}
-                                            className="ms-1 text-md font-medium text-gray-700 md:ms-2 dark:text-gray-400"
+                                            className="ms-1 font-medium md:ms-2"
+                                            style={{ fontSize: size.paragraphMedium }}
                                         >
                                             {item.label}
                                         </Link>
