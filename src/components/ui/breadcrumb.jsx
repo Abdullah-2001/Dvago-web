@@ -5,7 +5,7 @@ const Breadcrumbs = ({ items = [] }) => {
     if (!items.length) return null;
     return (
         <nav className="flex" aria-label="Breadcrumb">
-            <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse overflow-x-auto">
                 {items.map((item, index) => {
                     const isLast = index === items.length - 1;
                     return (
@@ -46,7 +46,7 @@ const Breadcrumbs = ({ items = [] }) => {
                                     </svg>
                                     {isLast ? (
                                         <span
-                                            className="ms-1 font-medium md:ms-2"
+                                            className="font-medium"
                                             style={{ fontSize: size.paragraphMedium }}
                                         >
                                             {item.label}
@@ -54,7 +54,7 @@ const Breadcrumbs = ({ items = [] }) => {
                                     ) : (
                                         <Link
                                             to={item.href || "#"}
-                                            className="ms-1 font-medium md:ms-2"
+                                            className="font-medium"
                                             style={{ fontSize: size.paragraphMedium }}
                                         >
                                             {item.label}
